@@ -18,6 +18,7 @@ public class Converter implements TextGraphicsConverter {
     private int newWidth;
     private int newHeight;
     private TextColorSchema schema = new ColorSchema();
+    private String sbout;
 
     @Override
     public String convert(String url) throws IOException, BadImageSizeException {
@@ -72,11 +73,12 @@ public class Converter implements TextGraphicsConverter {
                 }
             }
             System.out.println(chars.toString());
+            sbout= String.valueOf(chars);
         } catch (
                 IOException e) {
             System.out.println("Ошибка доступа к изображению или ссылка не актуальна!");
         }
-        return null;
+        return sbout.toString();
     }
 
     @Override
